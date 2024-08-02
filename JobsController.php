@@ -686,16 +686,6 @@ class JobsController extends Controller
         }
     }
 
-    // TODO what its do.
-    // If we are closing Measure job for HD need send response with [acknowledgeMeasureDiagram] to endpoint /poupdate/close/measure
-    // If we are closing Install job for HD same endpoint with /poupdate/close/install params [ackFaxLienWaiver] = Y [jobPermitNumber] -> Needs update Migration or can be NA
-    // Step 3 check ->wp-content/plugins/api_connector/_scripts/api006.php
-    // Step 4 for Measure jobs  check -> wp-content/plugins/dragonfly_payroll/_includes/obj.v3payroll.php (calculated_payout)
-    // Step 5 IF we need Action Tracker and report we need to store it.
-    // Step 6 Archive Jobs set status Keyrec`d and completed_date
-    // Step 7 Create internal note
-    // Step 8 Send Note to the store
-    // Step 9 For Measures we don`t have it  (dragonfly_nearby_measures) and all functionality is mystery for me but we need delete from there
     public function closeJob($jobId)
     {
         $job = $this->jobs->find($jobId);
